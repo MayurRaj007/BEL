@@ -1,6 +1,9 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Roboto', sans-serif;
+    background-color: #e9ecef; /* Light gray background */
     margin: 0;
     padding: 20px;
 }
@@ -9,55 +12,96 @@ body {
     max-width: 600px;
     margin: auto;
     background: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
 }
 
 h1, h2 {
     text-align: center;
+    color: #343a40; /* Dark gray for headings */
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
+.parking-info {
+    margin-top: 20px;
+}
+
+.parking-slots {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.slot {
+    background-color: #ffffff; /* White background for slots */
+    border: 2px solid #ced4da; /* Light border */
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    flex: 1 1 calc(30% - 20px); /* Responsive width */
+}
+
+.slot:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.slot h3 {
+    margin: 0;
+    font-size: 1.5em; /* Larger font for slot title */
+    color: #343a40; /* Dark gray for text */
 }
 
 .status {
     font-weight: bold;
+    font-size: 1.2em; /* Slightly larger font for status */
+    margin-top: 10px;
 }
 
-input[type="text"] {
-    width: calc(100% - 22px);
-    padding: 10px;
-    margin: 10px 0;
+.status.available {
+    color: #28a745; /* Green for available */
 }
 
-button {
-    padding: 10px;
-    width: 100%;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    cursor: pointer;
+.status.occupied {
+    color: #dc3545; /* Red for occupied */
 }
 
-button:hover {
-    background-color: #218838;
+.log {
+    margin-top: 30px;
 }
 
-table {
+#parking-log {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
+#parking-log th, #parking-log td {
+    border: 1px solid #ced4da;
+    padding: 10px;
     text-align: center;
 }
 
-th {
-    background-color: #f2f2f2;
+#parking-log th {
+    background-color: #f8f9fa; /* Light gray for header */
+    color: #343a40; /* Dark gray for text */
+}
+
+#parking-log tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Zebra striping for rows */
+}
+
+#parking-log tbody tr:hover {
+    background-color: #e9ecef; /* Highlight on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+    .slot {
+        flex: 1 1 calc(100% - 20px); /* Full width on small screens */
+    }
 }
