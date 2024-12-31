@@ -18,6 +18,10 @@ body {
     transition: transform 0.3s;
 }
 
+.container:hover {
+    transform: scale(1.02); /* Slight zoom effect on hover */
+}
+
 h1, h2 {
     text-align: center;
     color: #343a40; /* Dark gray for headings */
@@ -48,6 +52,7 @@ h1, h2 {
 .slot:hover {
     transform: translateY(-5px); /* Lift effect on hover */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+    background-color: #f8f9fa; /* Change background color on hover */
 }
 
 .slot h3 {
